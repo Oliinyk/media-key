@@ -20,16 +20,8 @@
     // Mobile menu
     $(document).on('click', '.mobile-button', function() {
         $(this).toggleClass('active');
-        $('.lists-wrap').slideToggle();
+        $('.header-wrap').slideToggle();
     })
-
-    // Tab
-    let Tab = function() {
-        $(".menu-tab li").click(function() {
-            $(".menu-tab li").removeClass("active").eq($(this).index()).addClass("active");
-            $(".content-tab .content-item").hide().eq($(this).index()).fadeIn()
-        }).eq(0).addClass("active");
-    };
 
     // Scroll Top
     let scrollToTop = function() {
@@ -147,7 +139,6 @@
     // Dom Ready
     $(function() {
         Preloader();
-        Tab();
         scrollToTop();
         wowAnimation();
         ajaxContactForm();
