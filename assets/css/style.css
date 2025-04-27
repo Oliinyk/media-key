@@ -96,8 +96,14 @@ a {
 .text-gray {
     color: #828282;
 }
+.text-yellow {
+    color: #FFD900;
+}
 .d-block {
     display: block;
+}
+.font-wix {
+    font-family: "Wix Madefor Display", sans-serif;
 }
 .btn-holder {
     display: flex;
@@ -149,8 +155,15 @@ body {
 .row {
     display: flex;
 }
-
-
+.mb-3 {
+    margin-bottom: 3rem;
+}
+.grid {
+    display: grid;
+}
+.grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
 
 
 
@@ -272,8 +285,8 @@ body {
 .header-transparent .nav-item a {
     color: #fff;
 }
-.header .nav-item a:hover {
-    color: #0053ff;
+.nav-item a:hover {
+    color: #FC430B;
 }
 .header-wrap {
     display: flex;
@@ -349,10 +362,35 @@ body {
     font-size: 24px;
     text-align: center;
     max-width: 875px;
-    margin: 0 auto;
+    margin: 0 auto 40px;
+}
+.for-whom-section .video-wrap {
+    margin: 0 auto 40px;
+}
+.for-whom-section .col-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.for-whom-section .row-head {
+    margin: 0 0 20px;
+}
+.for-whom-section .row-title {
+    font-size: 24px;
 }
 
-
+.action-section {
+    background-image: url('../img/action-bg.png');
+    background-size: cover;
+    padding: 200px 0;
+    color: #fff;
+}
+.action-section .title {
+    line-height: 1.15;
+}
+.action-section p {
+    font-size: 24px;
+}
 
 #scroll-top {
     position: fixed;
@@ -381,7 +419,7 @@ body {
 }
 #scroll-top:before {
     z-index: -1;
-    background-color: #0053ff;
+    background-color: #FC430B;
 }
 #scroll-top:after {
     content: "\f077";
