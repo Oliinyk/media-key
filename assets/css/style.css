@@ -90,6 +90,9 @@ a {
 .text-right {
     text-align: right;
 }
+.text-primary {
+    color: #FC430B;
+}
 .text-white {
     color: #fff;
 }
@@ -99,7 +102,7 @@ a {
 .text-yellow {
     color: #FFD900;
 }
-.d-block {
+.block {
     display: block;
 }
 .font-wix {
@@ -114,14 +117,28 @@ a {
     justify-content: center;
     background-color: #FC430B;
     color: #fff;
-    font-size: 15px;
     line-height: 1;
     letter-spacing: 1px;
     padding: 22px 30px;
     border-radius: 30px;
     text-transform: uppercase;
     font-family: "Wix Madefor Display", sans-serif;
+    font-size: 15px;
     font-weight: 500;
+}
+.btn-transparent {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    color: #FC430B;
+    border: 1px solid #FC430B;
+    padding: 14px 48px;
+    border-radius: 30px;
+    text-transform: uppercase;
+    font-family: "Wix Madefor Display", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
 }
 body {
     font-family: "Unbounded", sans-serif;
@@ -163,6 +180,9 @@ body {
 }
 .grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+.grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 
@@ -392,6 +412,85 @@ body {
     font-size: 24px;
 }
 
+.dark-section {
+    background-color: #000;
+    color: #fff;
+    padding: 60px 0 40px;
+}
+.about-wrap {
+    padding: 0 0 60px;
+}
+.about-wrap::before,
+.about-wrap::after {
+    content: '';
+    background-color: #454545;
+    display: block;
+    height: 1px;
+    width: 100%;
+}
+.about-wrap::before {
+    margin: 0 0 60px;
+}
+.about-wrap::after {
+    margin: 60px 0 0;
+}
+.about-wrap p {
+    font-size: 36px;
+    font-weight: 700;
+    margin: 0 0 50px;
+}
+.cta-text {
+    color: #FC430B;
+    font-size: 36px;
+    font-weight: 700;
+}
+.form-wrap {
+    display: flex;
+}
+.form-col {
+    width: 50%;
+}
+.form-wrap .form {
+    gap: 20px 10px;
+}
+.form-wrap .form input {
+    border: 1px solid #828282;
+    padding: 13px;
+    width: 100%;
+}
+
+.offer-section {
+    background-image: url('../img/offer-bg.png');
+    background-size: cover;
+    padding: 50px 0;
+    color: #fff;
+}
+.offer-section .title {
+    font-size: 36px;
+    text-align: center;
+    max-width: 880px;
+    margin: 0 auto 50px;
+}
+.offer-section .items {
+    gap: 15px 30px;
+}
+.offer-section .item {
+    background-color: rgba(0, 0, 0, 0.3);
+    padding: 20px 15px;
+    font-weight: 700;
+}
+.offer-section .item-title {
+    color: #FC430B;
+    font-size: 36px;
+    margin: 0 0 15px;
+}
+.reviews-section .inner-wrap {
+    display: flex;
+}
+
+
+
+
 #scroll-top {
     position: fixed;
     display: block;
@@ -434,6 +533,8 @@ body {
     visibility: visible;
     z-index: 99;
 }
+
+
 
 /*
 @media (max-width: 1630px) {
