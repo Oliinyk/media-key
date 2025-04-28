@@ -145,4 +145,50 @@
         ajaxCommentForm();
     });
 
+
+
+
+
+    // slider
+    // const swiper = new Swiper('.swiper', {
+    //     loop: true,
+    //     pagination: {
+    //       el: '.swiper-pagination',
+    //     },
+    //     navigation: {
+    //       nextEl: '.swiper-button-next',
+    //       prevEl: '.swiper-button-prev',
+    //     }
+    // });
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const swiper = new Swiper('.swiper-container', {
+            slidesPerView: 2,
+            spaceBetween: 0,
+            centeredSlides: true,
+            effect: 'coverflow',
+            coverflowEffect: {
+                rotate: 0,
+                stretch: 0,
+                depth: 400,
+                modifier: 1,
+                slideShadows: false,
+            },
+            pagination: {
+                el: '.swiper-pagination',
+                clickable: true,
+            },
+            loop: true,
+        });
+  
+        // Імітація кліку на кнопку відтворення
+        const playButtons = document.querySelectorAll('.play-button');
+        playButtons.forEach(button => {
+          button.addEventListener('click', function() {
+            alert('Відтворення відео');
+            // Тут можна додати логіку для відтворення відео
+          });
+        });
+    });
+
 })(jQuery);
