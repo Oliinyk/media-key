@@ -463,7 +463,7 @@ body {
 }
 
 .how-section {
-    padding: 70px 0;  
+    padding: 70px 0;
 }
 .how-section .title {
     color: var(--primary);
@@ -500,15 +500,40 @@ body {
 }
 .how-section .video-wrap {
     width: 60%;
+    padding: 0 50px 0 0;
 }
 .how-section .text-wrap {
     width: 40%;
 }
+.how-section .col-title {
+    font-family: "Wix Madefor Display", sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+}
+.how-section .text-wrap p {
+    padding: 30px 0 0;
+}
+.how-section .text-wrap p::before {
+    content: '';
+    background-color: #D9D9D9;
+    display: block;
+    margin: 0 0 30px;
+    height: 1px;
+    width: 100%;
+}
+.social-list {
+    display: flex;
+    align-items: center;
+    margin: 50px 0 0;
+}
+.social-list li {
+    margin: 0 50px 0 0;
+}
 
-
-
-
-
+.representatives-section {
+    padding: 70px 0;
+    text-align: center;
+}
 
 
 
