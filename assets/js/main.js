@@ -162,7 +162,7 @@
     // });
 
     document.addEventListener('DOMContentLoaded', function() {
-        const swiper = new Swiper('.swiper-container', {
+        const swiper = new Swiper('.reviews-slider', {
             slidesPerView: 2,
             spaceBetween: 0,
             centeredSlides: true,
@@ -178,17 +178,28 @@
                 el: '.swiper-pagination',
                 clickable: true,
             },
-            loop: true,
+            loop: true
         });
   
         // Імітація кліку на кнопку відтворення
-        const playButtons = document.querySelectorAll('.play-button');
-        playButtons.forEach(button => {
-          button.addEventListener('click', function() {
-            alert('Відтворення відео');
-            // Тут можна додати логіку для відтворення відео
-          });
+        // const playButtons = document.querySelectorAll('.play-button');
+        // playButtons.forEach(button => {
+        //   button.addEventListener('click', function() {
+        //     alert('Відтворення відео');
+        //   });
+        // });
+
+
+        const swiper2 = new Swiper('.why-slider', {
+            slidesPerView: 4.3,
+            spaceBetween: 0,
+            loop: true,
+            centeredSlides: true,
+            autoplay: {
+              delay: 5000,
+            },
         });
+
     });
 
 })(jQuery);
