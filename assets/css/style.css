@@ -534,6 +534,11 @@ body {
     padding: 70px 0;
     text-align: center;
 }
+.representatives-section .img-list img {
+    object-fit: contain;
+    height: 52px;
+    width: 170px;
+}
 
 
 
