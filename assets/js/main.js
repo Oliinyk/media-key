@@ -228,6 +228,13 @@
             },
         });
 
+        // cases-slider
+        const swiper3 = new Swiper('.cases-slider', {
+            slidesPerView: 2.9,
+            spaceBetween: 15,
+            loop: true
+        });
+
     });
 
 })(jQuery);

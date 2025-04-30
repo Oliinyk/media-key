@@ -6,6 +6,8 @@
     --white: #fff;
     --dark: #000;
     --gray: #828282;
+    --light-gray: #D9D9D9;
+    --dark-gray: #454545;
 }
 .btn,
 a {
@@ -62,14 +64,32 @@ a {
     align-items: center;
     justify-content: center;
     background-color: transparent;
-    color: var(--primary);
     border: 1px solid var(--primary);
+    color: var(--primary);
     padding: 14px 53px;
     border-radius: 30px;
     text-transform: uppercase;
     font-family: "Wix Madefor Display", sans-serif;
     font-size: 14px;
     font-weight: 700;
+}
+.btn-slide {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: transparent;
+    border: 1px solid var(--dark-gray);
+    color: var(--dark-gray);
+    padding: 12px 32px;
+    border-radius: 30px;
+    text-transform: uppercase;
+    font-family: "Wix Madefor Display", sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+}
+.btn-slide:hover {
+    border: 1px solid var(--primary);
+    color: var(--primary);
 }
 body {
     font-family: "Unbounded", sans-serif;
@@ -372,7 +392,7 @@ body {
 .about-wrap::before,
 .about-wrap::after {
     content: '';
-    background-color: #454545;
+    background-color: var(--dark-gray);
     display: block;
     height: 1px;
     width: 100%;
@@ -478,7 +498,7 @@ body {
 }
 .reviews-section .title::after {
     content: '';
-    background-color: #454545;
+    background-color: var(--dark-gray);
     display: block;
     margin: 40px 0 0;
     height: 1px;
@@ -520,7 +540,7 @@ body {
     width: 16px;
     height: 16px;
     background-color: transparent;
-    border: 2px solid #454545;
+    border: 2px solid var(--dark-gray);
     opacity: 1;
 }
 .reviews-slider .swiper-pagination-bullet-active {
@@ -533,7 +553,7 @@ body {
     width: 100%;
     height: 100%;
     background-color: #000;
-    border: 2px solid #454545;
+    border: 2px solid var(--dark-gray);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -611,9 +631,9 @@ body {
 }
 .how-section .row-main::after {
     content: '';
-    background-color: #D9D9D9;
+    background-color: var(--light-gray);
     display: block;
-    margin: 60px 0 0;
+    margin: 97px 0 0;
     height: 1px;
     width: 100%;
 }
@@ -634,7 +654,7 @@ body {
 }
 .how-section .text-wrap p::before {
     content: '';
-    background-color: #D9D9D9;
+    background-color: var(--light-gray);
     display: block;
     margin: 0 0 25px;
     height: 1px;
@@ -655,7 +675,6 @@ body {
 .social-list li a:hover svg {
     fill: var(--primary);
 }
-
 .representatives-section {
     padding: 70px 0;
     text-align: center;
@@ -665,8 +684,64 @@ body {
     height: 52px;
     width: 170px;
 }
-
-
+.cases-section {
+    background-color: var(--light-gray);
+    padding: 100px 0 80px;
+}
+.cases-section .title {
+    font-size: 36px;
+    font-weight: 700;
+    margin: 0 0 67px;
+}
+.cases-section .slider-wrap {
+    margin-left: calc((100vw - 1100px) / 2);
+    overflow: hidden;
+}
+.cases-section .text-holder {
+    margin: 35px 0 0;
+}
+.cases-section .slider-wrap p {
+    font-size: 24px;
+    font-weight: 700;
+    margin: 0 0 33px;
+}
+.goal-section {
+    background-image: url('../img/goal-bg.png');
+    background-size: cover;
+    color: var(--white);
+    padding: 255px 0 73px;
+}
+.goal-section .items-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0 17px;
+    margin: 0 0 64px;
+}
+.goal-section .title {
+    text-transform: uppercase;
+}
+.goal-section .subtitle {
+    font-size: 24px;
+}
+.goal-section ul {
+    margin: 63px 0 0;
+}
+.goal-section li {
+    font-size: 24px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 0 0 40px;
+}
+.goal-section .educt {
+    border-top: 1px solid var(--dark-gray);
+    color: var(--gray);
+    text-align: center;
+    padding: 40px 0 0;
+}
+.goal-section .educt p {
+    max-width: 810px;
+    margin: 0 auto;
+}
 
 
 
