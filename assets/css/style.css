@@ -1,8 +1,5 @@
 
-/* @import "https://use.typekit.net/wle4hpz.css"; */
-@import "animate.css";
-@import "fontawesome.css";
-@import "contact.css";
+/* @import "animate.css"; */
 
 :root {
     --primary: #FC430B;
@@ -451,11 +448,10 @@ body {
     font-size: 36px;
     margin: 0 0 15px;
 }
-
 .reviews-section {
     background-image: linear-gradient(to right, var(--dark) 42%, #1E1E1E 42%);
     color: var(--white);
-    padding: 100px 0;
+    padding: 100px 0 70px;
 }
 .reviews-section .inner-wrap {
     display: flex;
@@ -478,13 +474,13 @@ body {
 .reviews-section .title {
     font-size: 36px;
     font-weight: 700;
-    margin: 0 0 45px;
+    margin: 0 0 40px;
 }
 .reviews-section .title::after {
     content: '';
     background-color: #454545;
     display: block;
-    margin: 45px 0 0;
+    margin: 40px 0 0;
     height: 1px;
     width: 100%;
 }
@@ -494,8 +490,8 @@ body {
 .reviews-slider {
     width: 100%;
     max-width: 544px;
-    height: 600px;
-    padding: 0 0 32px;
+    height: 640px;
+    padding: 0 0 72px;
     overflow: hidden;
 }
 .reviews-slider .swiper-slide {
@@ -521,16 +517,17 @@ body {
     bottom: 0;
 }
 .reviews-slider .swiper-pagination-bullet {
-    width: 12px;
-    height: 12px;
-    margin: 0 5px;
+    width: 16px;
+    height: 16px;
     background-color: transparent;
-    border: 1px solid #454545;
-    opacity: 0.7;
+    border: 2px solid #454545;
+    opacity: 1;
 }
 .reviews-slider .swiper-pagination-bullet-active {
-    border: 1px solid var(--primary);
-    opacity: 1;
+    border: 2px solid var(--primary);
+}
+.swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet {
+    margin: 0 8px;
 }
 .reviews-slider .slide-placeholder {
     width: 100%;
@@ -549,20 +546,20 @@ body {
     margin-right: 46px;
     height: 475px;
 }
-
 .why-section {
     background-color: var(--dark);
-    padding: 70px 0;
+    padding: 100px 0 95px;
 }
 .why-section .title {
     font-size: 36px;
     font-weight: 700;
     color: var(--primary);
     max-width: 544px;
-    margin: 0 0 30px;
+    margin: 0 0 77px;
 }
 .why-section .slider-wrap {
-    margin: 0 0 20px;
+    margin: 0 0 37px;
+    overflow: hidden;
 }
 .why-slider img {
     width: 100%;
@@ -570,7 +567,7 @@ body {
 .why-section .items {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 0 40px;
+    gap: 0 70px;
 }
 .why-section .item {
     color: var(--white);
@@ -578,11 +575,10 @@ body {
     font-weight: 700;
 }
 .why-section .item p + p {
-    margin: 20px 0 0;
+    margin: 30px 0 0;
 }
-
 .how-section {
-    padding: 70px 0;
+    padding: 100px 0;
 }
 .how-section .title {
     color: var(--primary);
@@ -593,13 +589,16 @@ body {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    margin: 0 0 50px;
+    margin: 0 0 70px;
 }
 .how-section .col-head {
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 50%;
+}
+.how-section .col-head + .col-head {
+    padding: 25px 0 0 8px;
 }
 .how-section .col-head p {
     color: var(--gray);
@@ -608,6 +607,7 @@ body {
 .how-section .row-main {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-between;
 }
 .how-section .row-main::after {
     content: '';
@@ -619,13 +619,13 @@ body {
 }
 .how-section .video-wrap {
     width: 60%;
-    padding: 0 50px 0 0;
+    padding: 0 23px 0 0;
 }
 .how-section .text-wrap {
-    width: 40%;
+    width: 39%;
+    font-family: "Wix Madefor Display", sans-serif;
 }
 .how-section .col-title {
-    font-family: "Wix Madefor Display", sans-serif;
     font-size: 24px;
     font-weight: 700;
 }
@@ -636,17 +636,24 @@ body {
     content: '';
     background-color: #D9D9D9;
     display: block;
-    margin: 0 0 30px;
+    margin: 0 0 25px;
     height: 1px;
     width: 100%;
 }
 .social-list {
     display: flex;
     align-items: center;
-    margin: 50px 0 0;
+    margin: 40px 0 0;
 }
 .social-list li {
-    margin: 0 50px 0 0;
+    margin: 0 45px 0 0;
+}
+.social-list li svg {
+    fill: var(--dark);
+    transition: all .25s ease-in-out;
+}
+.social-list li a:hover svg {
+    fill: var(--primary);
 }
 
 .representatives-section {
