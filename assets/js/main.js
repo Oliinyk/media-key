@@ -162,6 +162,34 @@
     // });
 
     document.addEventListener('DOMContentLoaded', function() {
+
+        //dropdown
+        const dropdown = document.getElementById('langDropdown');
+        const selectedLang = document.getElementById('selectedLang');
+        const dropdownBtn = document.querySelector('.dropdown-btn');
+        const options = document.querySelectorAll('.dropdown-option');
+        
+        dropdownBtn.addEventListener('click', () => {
+            dropdown.classList.toggle('active');
+        });
+        
+        options.forEach(option => {
+            option.addEventListener('click', () => {
+                selectedLang.textContent = option.dataset.lang;
+                dropdown.classList.remove('active');
+            });
+        });
+        
+        // Close the dropdown when clicking outside
+        window.addEventListener('click', (e) => {
+            if (!dropdown.contains(e.target)) {
+                dropdown.classList.remove('active');
+            }
+        });
+        //End dropdown
+
+
+
         const swiper = new Swiper('.reviews-slider', {
             slidesPerView: 2,
             spaceBetween: 0,

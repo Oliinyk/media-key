@@ -28,39 +28,48 @@
 
     <div class="wrapper">
         <header class="header header-transparent">
-
-
             <div class="header-wrap">
-
                 <a href="/" class="logo">
                     <img src="assets/img/logo.svg" alt="logo">
                 </a>
 
-                <ul class="main-nav">
-                    <li class="nav-item">
-                        <a href="#">Для кого игра</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#">Отзывы</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#">Как проходит игра</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#">кейсы</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#">стоимость</a>
-                    </li>
-                    <li class="nav-item">
-                        <a href="#">Контакты</a>
-                    </li>
-                </ul>
+                <div class="header-nav">
+                    <ul class="main-nav">
+                        <li class="nav-item">
+                            <a href="#">Для кого игра</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#">Отзывы</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#">Как проходит игра</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#">кейсы</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#">стоимость</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="#">Контакты</a>
+                        </li>
+                    </ul>
 
-                <div>
-                    <a href="#" class="btn">PLAY THE GAME</a>
+                    <div class="dropdown" id="langDropdown">
+                        <div class="dropdown-btn">
+                        <span id="selectedLang">EN</span>
+                        <div class="triangle"></div>
+                        </div>
+                        <div class="dropdown-content">
+                        <div class="dropdown-option" data-lang="UA">UA</div>
+                        <div class="dropdown-option" data-lang="MD">MD</div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <a href="#" class="btn">PLAY THE GAME</a>
+                    </div>
                 </div>
-
             </div>
 
             <div class="mobile-button">
@@ -68,15 +77,13 @@
             </div>
         </header>
 
-        <div class="hero">
+        <section class="hero">
             <div class="container">
                 <div class="hero-wrap">
-
                     <div class="l-col">
                         <h1 class="title">КАК БИЗНЕСУ ПРОЦВЕТАТЬ В ХАОСЕ?</h1>
                         <p class="text"><span class="text-gray">Отработай стратегии управления в беспорядке на рефлексивной игре от Медиа Ключ:</span> ”Искусство процветания в хаосе”</p>
                     </div>
-
                     <div class="r-col">
                         <div class="hero-box">
                             <h2 class="date-text">9-12 октября 2025</h2>
@@ -84,24 +91,19 @@
                             <p class="limitation-text">В ИГРЕ ВСЕГО <span class="block text-bold">59 МЕСТ</span></p>
                         </div>
                     </div>
-
                 </div>
             </div>
-        </div>
+        </section>
         
         <section class="for-whom-section">
             <div class="container">
                 <h4 class="title">Научиться превращать хаос в новые возможности. Создавать сильные команды и доводить проекты до результата. Находить опору в хаосе и достигать поставленных целей.</h4>
-
                 <div class="video-wrap">
                     <iframe width="100%" height="621" src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
                 </div>
-
-                
-                <p class="text-large text-bold text-white mb-3">ДЛЯ КОГО <span class="block">ИГРА?</span></p>
-
-                <div class="row">
-                    <div class="col-text col-sm-4">
+                <p class="col-title text-large text-bold text-white">ДЛЯ КОГО <span class="block">ИГРА?</span></p>
+                <div class="items-row">
+                    <div class="col-text">
                         <div class="row-head">
                             <p class="row-title text-bold">/</p>
                             <p class="row-title text-bold"><span class="block">Предпринима-</span>
@@ -109,8 +111,7 @@
                         </div>
                         <p class="font-wix">достигшим плато в развитии компании и стремящимся к масштабированию, партнерствам и прорыву из застоя.</p>
                     </div>
-
-                    <div class="col-text col-sm-4">
+                    <div class="col-text">
                         <div class="row-head">
                             <p class="row-title text-bold">/</p>
                             <p class="row-title text-bold"><span class="block">Стартап-</span>
@@ -118,8 +119,7 @@
                         </div>
                         <p class="font-wix">испытывающим страх перед быстрым ростом и переменами, желающим развить лидерские навыки и личную устойчивость.</p>
                     </div>
-
-                    <div class="col-text col-sm-4">
+                    <div class="col-text">
                         <div class="row-head">
                             <p class="row-title text-bold">/</p>
                             <p class="row-title text-bold"><span class="block">Управленцам</p>
@@ -130,10 +130,9 @@
             </div>
         </section>
 
-
         <section class="action-section">
             <div class="container">
-                <div class="grid grid-cols-2">
+                <div class="items-row">
                     <div>
                         <h4 class="title text-large text-bold"><span class="text-yellow">ОПЫТ</span> ЧЕРЕЗ ДЕЙСТВИЕ</h4>
                     </div>
@@ -147,18 +146,18 @@
         <div class="dark-section">
             <div class="container">
                 <div class="about-wrap">
-                    <p>Компания <span class="text-primary">«Медиа Ключ»</span> с 1986 года провела свыше 1000 команд и управленцев через авторскую технологию рефлексивных игр. </p>
-                    <p>В центре процесса — личный опыт, а не знание. Именно он становится основой для изменений в бизнесе.</p>
+                    <div class="text-holder">
+                        <p>Компания <span class="text-primary">«Медиа Ключ»</span> с 1986 года провела свыше 1000 команд и управленцев через авторскую технологию рефлексивных игр. </p>
+                        <p>В центре процесса — личный опыт, а не знание. Именно он становится основой для изменений в бизнесе.</p>
+                    </div>
                 </div>
-
                 <div class="form-wrap">
-                    <div class="form-col">
-                        <p>Есть вопросы? 
-                            Хотите узнать будет ли полезна игра вам?</p>
+                    <div class="text-col">
+                        <p><span class="block-sm">Есть вопросы?</span> Хотите узнать будет ли полезна игра вам?</p>
                         <p class="cta-text">Запишись на консультацию</p>
                     </div>
                     <div class="form-col">
-                        <form class="form grid grid-cols-2 font-wix">
+                        <form class="form font-wix">
                             <div>
                                 <input type="text" placeholder="Имя">
                             </div>
@@ -177,14 +176,13 @@
             </div>
         </div>
 
-
         <section class="offer-section">
             <div class="container">
                 <h3 class="title">Что дает управленческая игра 
                     <span class="text-bold">”Искусство процветания 
                     в хаосе”?</span>
                 </h3>
-                <div class="items grid grid-cols-3">
+                <div class="items">
                     <div class="item">
                         <p class="item-title">1/</p>
                         <p>Увидеть свои слепые зоны</p>
@@ -197,7 +195,6 @@
                         <p class="item-title">3/</p>
                         <p>Отточить инструмент анализа ситуации на практике</p>
                     </div>
-
                     <div class="item">
                         <p class="item-title">4/</p>
                         <p>Управлять командой
@@ -212,7 +209,6 @@
                         <p class="item-title">6/</p>
                         <p>Умение договариваться с инвестором</p>
                     </div>
-
                     <div class="item">
                         <p class="item-title">7/</p>
                         <p>Вовлекать в свой проект клиентов</p>
@@ -230,10 +226,8 @@
             </div>
         </section>
 
-
         <section class="reviews-section">
             <div class="container">
-
                 <div class="inner-wrap">
                     <div class="text-col">
                         <div class="text-holder">
@@ -250,7 +244,7 @@
                                 <div class="slide-content">
                                   <div class="slide-placeholder">
                                     <!-- <div class="play-button"></div> -->
-                                    <iframe width="100%" height="568" src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
+                                    <iframe width="100%" height="564" src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
                                   </div>
                                 </div>
                               </div>
