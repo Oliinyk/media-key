@@ -5,8 +5,13 @@
     // Mobile menu
     $(document).on('click', '.mobile-button', function() {
         $(this).toggleClass('active');
-        $('.header-wrap').slideToggle();
-    })
+        $('.header-wrap').toggleClass('active');
+    });
+    // close mobile menu on anchor click
+    $(document).on('click', '.header a[href^="#"]', function () {
+        $('.mobile-button').removeClass('active');
+        $('.header-wrap').removeClass('active');
+    });
 
     // Anchor link
     $(document).on('click', 'a[href^="#"]', function (event) {
