@@ -9,13 +9,6 @@
     })
 
     // Anchor link
-    // $(document).on('click', 'a[href^="#"]', function (event) {
-    //     event.preventDefault();
-    
-    //     $('html, body').animate({
-    //         scrollTop: $($.attr(this, 'href')).offset().top
-    //     }, 500);
-    // });
     $(document).on('click', 'a[href^="#"]', function (event) {
         event.preventDefault();
         var target = $($.attr(this, 'href'));
@@ -197,10 +190,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // why-slider
     const swiper2 = new Swiper('.why-slider', {
-        slidesPerView: 4.3,
+        slidesPerView: 7,
         spaceBetween: 0,
         loop: true,
-        centeredSlides: true,
+        // centeredSlides: true,
         autoplay: {
           delay: 5000,
         },
