@@ -1,21 +1,6 @@
-/**
- * flatAccordions
- * pageLoad
- */
-
- (function($) {
+(function($) {
 
     "use strict";
-
-    // PreLoad
-    let Preloader = function() {        
-        $(window).on("load", function () {
-            $(".loader").fadeOut();
-            $("#loading-overlay").delay(500).fadeOut('slow',function(){
-                $(this).remove();
-            }); 
-        });
-    };
 
     // Mobile menu
     $(document).on('click', '.mobile-button', function() {
@@ -23,9 +8,35 @@
         $('.header-wrap').slideToggle();
     })
 
-    // Scroll Top
+    // Anchor link
+    // $(document).on('click', 'a[href^="#"]', function (event) {
+    //     event.preventDefault();
+    
+    //     $('html, body').animate({
+    //         scrollTop: $($.attr(this, 'href')).offset().top
+    //     }, 500);
+    // });
+    $(document).on('click', 'a[href^="#"]', function (event) {
+        event.preventDefault();
+        var target = $($.attr(this, 'href'));
+        if (target.length) {
+            $('html, body').animate({
+                scrollTop: target.offset().top - 87
+            }, 500);
+        }
+    });
+
+    // Scroll function
     let scrollToTop = function() {
         $(window).scroll(function() {
+            // header
+            if ( $(this).scrollTop() > 100 ) {
+                $('.header').addClass('dark');
+            } else {
+                $('.header').removeClass('dark');
+            }
+
+            //Scroll Top
             if ( $(this).scrollTop() > 300 ) {
                 $('#scroll-top').addClass('show');
             } else {
@@ -35,12 +46,11 @@
 
         $('#scroll-top').on('click', function() {
             $('html, body').animate({ scrollTop: 0 } , 'easeInOutExpo');
-        return false;
+            return false;
         });
     }
 
     // validation
-
     var ajaxContactForm = function() {
         $('#contactform').each(function() {
             $(this).validate({
@@ -131,16 +141,10 @@
         }); // each commentform
     };
 
-    // wowAnimation
-    let wowAnimation = function () {
-        new WOW().init();   
-    }
 
     // Dom Ready
     $(function() {
-        Preloader();
         scrollToTop();
-        wowAnimation();
         ajaxContactForm();
         ajaxCommentForm();
     });

@@ -21,31 +21,25 @@
 </head>
 
 <body>
-    <!-- Preloader -->
-    <!-- <div id="loading-overlay">
-        <div class="loader"></div>
-    </div> -->
-
     <div class="wrapper">
-        <header class="header header-transparent">
+        <header class="header">
             <div class="header-wrap">
                 <a href="/" class="logo">
                     <img src="assets/img/logo.svg" alt="logo">
                 </a>
-
                 <div class="header-nav">
                     <ul class="main-nav">
                         <li class="nav-item">
-                            <a href="#">Для кого игра</a>
+                            <a href="#for-whom-anchor">Для кого игра</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#">Отзывы</a>
+                            <a href="#reviews-anchor">Отзывы</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#">Как проходит игра</a>
+                            <a href="#how-anchor">Как проходит игра</a>
                         </li>
                         <li class="nav-item">
-                            <a href="#">кейсы</a>
+                            <a href="#cases-anchor">кейсы</a>
                         </li>
                         <li class="nav-item">
                             <a href="#">стоимость</a>
@@ -54,20 +48,22 @@
                             <a href="#">Контакты</a>
                         </li>
                     </ul>
-
                     <div class="dropdown" id="langDropdown">
                         <div class="dropdown-btn">
-                        <span id="selectedLang">EN</span>
-                        <div class="triangle"></div>
+                            <span id="selectedLang">EN</span>
+                            <div class="triangle"></div>
                         </div>
                         <div class="dropdown-content">
-                        <div class="dropdown-option" data-lang="UA">UA</div>
-                        <div class="dropdown-option" data-lang="MD">MD</div>
+                            <div class="dropdown-option" data-lang="UA">
+                                <a href="#">UA</a>
+                            </div>
+                            <div class="dropdown-option" data-lang="MD">
+                                <a href="#">MD</a>
+                            </div>
                         </div>
                     </div>
-
                     <div>
-                        <a href="#" class="btn">PLAY THE GAME</a>
+                        <a href="#form-anchor" class="btn">PLAY THE GAME</a>
                     </div>
                 </div>
             </div>
@@ -101,7 +97,9 @@
                 <div class="video-wrap">
                     <iframe width="100%" height="621" src="https://www.youtube.com/embed/tgbNymZ7vqY"></iframe>
                 </div>
-                <p class="col-title text-large text-bold text-white">ДЛЯ КОГО <span class="block">ИГРА?</span></p>
+                <div class="col-title-wrap" id="for-whom-anchor">
+                    <p class="col-title text-large text-bold text-white">ДЛЯ КОГО <span class="block">ИГРА?</span></p>
+                </div>
                 <div class="items-row">
                     <div class="col-text">
                         <div class="row-head">
@@ -226,7 +224,7 @@
             </div>
         </section>
 
-        <section class="reviews-section">
+        <section class="reviews-section" id="reviews-anchor">
             <div class="container">
                 <div class="inner-wrap">
                     <div class="text-col">
@@ -329,7 +327,7 @@
             </div>
         </section>
 
-        <section class="how-section">
+        <section class="how-section" id="how-anchor">
             <div class="container">
                 <div class="row-head">
                     <div class="col-head">
@@ -337,7 +335,7 @@
                     </div>
                     <div class="col-head">
                         <p class="font-wix">Перейдите на новый уровень управления бизнесом, проектом и жизнью.</p>
-                        <a href="#" class="btn">PLAY THE GAME</a>
+                        <a href="#form-anchor" class="btn">PLAY THE GAME</a>
                     </div>
                 </div>
                 <div class="row-main">
@@ -395,10 +393,17 @@
                     <img src="assets/img/archimatika.png" alt="archimatika">
                     <img src="assets/img/exist.svg" alt="exist">
                 </div>
+                <div class="img-list img-list-light">
+                    <img src="assets/img/dim.png" alt="dim">
+                    <img src="assets/img/rud.png" alt="rud">
+                    <img src="assets/img/udp.png" alt="udp">
+                    <img src="assets/img/archimatika.png" alt="archimatika">
+                    <img src="assets/img/exist.svg" alt="exist">
+                </div>
             </div>
         </section>
 
-        <section class="cases-section">
+        <section class="cases-section" id="cases-anchor">
             <div class="container">
                 <h3 class="title">НАШИ <span class="block">КЕЙСЫ</span></h3>
             </div>
@@ -473,7 +478,7 @@
             </div>
         </section>
 
-        <div class="dark-section">
+        <div class="dark-section" id="form-anchor">
             <div class="container">
                 <div class="form-wrap">
                     <div class="text-col">
@@ -557,12 +562,16 @@
     </div>
 
     <!-- /#wrapper -->
-    <a id="scroll-top"></a>
+    <a id="scroll-top">
+        <svg xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd" viewBox="0 0 512 319.24">
+            <path d="m5.9 270.28 43.07 43.07c7.86 7.86 20.73 7.84 28.56 0l178.48-178.48L434.5 313.35c7.86 7.86 20.74 7.82 28.56 0l43.07-43.07c7.83-7.84 7.83-20.72 0-28.56L313.72 49.32l-.36-.37-43.07-43.07c-7.83-7.82-20.7-7.86-28.56 0l-43.07 43.07-.36.37L5.9 241.72c-7.87 7.86-7.87 20.7 0 28.56z"/>
+        </svg>
+    </a>
 
     <!-- Javascript -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     
-    <script src="assets/js/wow.min.js"></script>
+    <!-- <script src="assets/js/wow.min.js"></script> -->
     <script src="assets/js/jquery.min.js"></script>
     <script src="assets/js/main.js"></script>
 
