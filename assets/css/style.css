@@ -256,7 +256,7 @@ body {
     display: block;
 }
 .hero {
-    background-image: url('../img/hero-bg.jpg');
+    background-image: url('../img/hero-bg.gif');
     background-size: cover;
     padding: 215px 0 87px;
 }
@@ -373,13 +373,28 @@ body {
     font-size: 24px;
 }
 .action-section {
-    background-image: url('../img/action-bg.png');
+    background-image: url('../img/action-bg.gif');
     background-size: cover;
     padding: 50px 0;
     color: var(--white);
     min-height: 86vh;
     display: flex;
     align-items: center;
+    position: relative;
+}
+.action-section::after {
+    content: '';
+    background-color: var(--dark);
+    opacity: .5;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+}
+.action-section .container {
+    z-index: 1;
 }
 .action-section .items-row {
     display: grid;
@@ -453,10 +468,25 @@ body {
     width: 100%;
 }
 .offer-section {
-    background-image: url('../img/offer-bg.png');
+    background-image: url('../img/offer-bg.gif');
     background-size: cover;
     padding: 100px 0 96px;
     color: var(--white);
+    position: relative;
+}
+.offer-section::after {
+    content: '';
+    background-color: var(--dark);
+    opacity: .5;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+}
+.offer-section .container {
+    z-index: 1;
 }
 .offer-section .title {
     font-size: 36px;
