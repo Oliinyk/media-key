@@ -1,13 +1,12 @@
-
-/* @import "animate.css"; */
-
 :root {
     --primary: #FC430B;
     --white: #fff;
     --dark: #000;
-    --gray: #828282;
     --light-gray: #D9D9D9;
+    --gray: #828282;
     --dark-gray: #454545;
+    --dark-gray2: #1E1E1E;
+    --font-wix: "Wix Madefor Display", sans-serif;
 }
 .btn,
 a {
@@ -41,7 +40,7 @@ a {
     color: #FFD900;
 }
 .font-wix {
-    font-family: "Wix Madefor Display", sans-serif;
+    font-family: var(--font-wix);
 }
 .btn-holder {
     display: flex;
@@ -469,7 +468,7 @@ body {
     margin: 0 0 15px;
 }
 .reviews-section {
-    background-image: linear-gradient(to right, var(--dark) 42%, #1E1E1E 42%);
+    background-image: linear-gradient(to right, var(--dark) 42%, var(--dark-gray2) 42%);
     color: var(--white);
     padding: 100px 0 70px;
 }
@@ -705,6 +704,14 @@ body {
     font-weight: 700;
     margin: 0 0 33px;
 }
+.cases-section .swiper-slide {
+    opacity: 0.3;
+}
+.cases-section .swiper-slide-active,
+.cases-section .swiper-slide-next,
+.cases-section .swiper-slide-prev {
+    opacity: 1;
+}
 .goal-section {
     background-image: url('../img/goal-bg.png');
     background-size: cover;
@@ -742,6 +749,71 @@ body {
     max-width: 810px;
     margin: 0 auto;
 }
+.faq-section {
+    background-color: var(--dark-gray2);
+    color: var(--white);
+    padding: 100px 0 80px;
+}
+.faq-section .title {
+    font-size: 36px;
+    font-weight: 700;
+    text-transform: uppercase;
+    max-width: 540px;
+    margin: 0 0 27px;
+}
+.faq-wrap {
+    max-width: 880px;
+    margin: 0 auto;
+}
+.faq-item {
+    border-bottom: 1px solid var(--dark-gray);
+    padding: 40px 0;
+}
+.faq-item:last-child {
+    border-bottom: 0;
+}
+.faq-question {
+    color: var(--white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+.faq-question h3 {
+    font-size: 24px;
+    font-weight: bold;
+    padding-right: 10px;
+    max-width: 540px;
+    margin: 0;
+}
+.toggle-icon {
+    font-size: 36px;
+    color: var(--white);
+    transition: transform 0.3s ease;
+}
+.faq-answer {
+    color: var(--gray);
+    max-height: 0;
+    overflow: hidden;
+    font-family: var(--font-wix);
+    line-height: 1.5;
+    transition: max-height 0.3s ease;
+}
+.faq-item.active .faq-answer {
+    max-height: 500px;
+}
+.faq-answer p {
+    margin: 40px 0 20px;
+}
+.faq-item.active .faq-question {
+    color: var(--primary);
+}
+.faq-item.active .toggle-icon {
+    color: var(--primary);
+    transform: rotate(180deg);
+}
+
+
 
 
 

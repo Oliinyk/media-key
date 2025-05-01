@@ -144,97 +144,90 @@
         ajaxContactForm();
         ajaxCommentForm();
     });
+})(jQuery);
 
 
 
-
-
-    // slider
-    // const swiper = new Swiper('.swiper', {
-    //     loop: true,
-    //     pagination: {
-    //       el: '.swiper-pagination',
-    //     },
-    //     navigation: {
-    //       nextEl: '.swiper-button-next',
-    //       prevEl: '.swiper-button-prev',
-    //     }
-    // });
-
-    document.addEventListener('DOMContentLoaded', function() {
-
-        //dropdown
-        const dropdown = document.getElementById('langDropdown');
-        const selectedLang = document.getElementById('selectedLang');
-        const dropdownBtn = document.querySelector('.dropdown-btn');
-        const options = document.querySelectorAll('.dropdown-option');
-        
-        dropdownBtn.addEventListener('click', () => {
-            dropdown.classList.toggle('active');
+document.addEventListener('DOMContentLoaded', function() {
+    //dropdown
+    const dropdown = document.getElementById('langDropdown');
+    const selectedLang = document.getElementById('selectedLang');
+    const dropdownBtn = document.querySelector('.dropdown-btn');
+    const options = document.querySelectorAll('.dropdown-option');
+    dropdownBtn.addEventListener('click', () => {
+        dropdown.classList.toggle('active');
+    });
+    options.forEach(option => {
+        option.addEventListener('click', () => {
+            selectedLang.textContent = option.dataset.lang;
+            dropdown.classList.remove('active');
         });
-        
-        options.forEach(option => {
-            option.addEventListener('click', () => {
-                selectedLang.textContent = option.dataset.lang;
-                dropdown.classList.remove('active');
-            });
-        });
-        
-        // Close the dropdown when clicking outside
-        window.addEventListener('click', (e) => {
-            if (!dropdown.contains(e.target)) {
-                dropdown.classList.remove('active');
-            }
-        });
-        //End dropdown
+    });
+    // Close the dropdown when clicking outside
+    window.addEventListener('click', (e) => {
+        if (!dropdown.contains(e.target)) {
+            dropdown.classList.remove('active');
+        }
+    });
+    //End dropdown
 
-
-
-        const swiper = new Swiper('.reviews-slider', {
-            slidesPerView: 2,
-            spaceBetween: 0,
-            centeredSlides: true,
-            effect: 'coverflow',
-            coverflowEffect: {
-                rotate: 0,
-                stretch: 0,
-                depth: 400,
-                modifier: 1,
-                slideShadows: false,
-            },
-            pagination: {
-                el: '.swiper-pagination',
-                clickable: true,
-            },
-            loop: true
-        });
-  
-        // Імітація кліку на кнопку відтворення
-        // const playButtons = document.querySelectorAll('.play-button');
-        // playButtons.forEach(button => {
-        //   button.addEventListener('click', function() {
-        //     alert('Відтворення відео');
-        //   });
-        // });
-
-
-        const swiper2 = new Swiper('.why-slider', {
-            slidesPerView: 4.3,
-            spaceBetween: 0,
-            loop: true,
-            centeredSlides: true,
-            autoplay: {
-              delay: 5000,
-            },
-        });
-
-        // cases-slider
-        const swiper3 = new Swiper('.cases-slider', {
-            slidesPerView: 2.9,
-            spaceBetween: 15,
-            loop: true
-        });
-
+    // reviews-slider
+    const swiper = new Swiper('.reviews-slider', {
+        slidesPerView: 2,
+        spaceBetween: 0,
+        centeredSlides: true,
+        effect: 'coverflow',
+        coverflowEffect: {
+            rotate: 0,
+            stretch: 0,
+            depth: 400,
+            modifier: 1,
+            slideShadows: false,
+        },
+        pagination: {
+            el: '.swiper-pagination',
+            clickable: true,
+        },
+        loop: true
     });
 
-})(jQuery);
+    // why-slider
+    const swiper2 = new Swiper('.why-slider', {
+        slidesPerView: 4.3,
+        spaceBetween: 0,
+        loop: true,
+        centeredSlides: true,
+        autoplay: {
+          delay: 5000,
+        },
+    });
+
+    // cases-slider
+    const swiper3 = new Swiper('.cases-slider', {
+        slidesPerView: 2.9,
+        spaceBetween: 15,
+        loop: true
+    });
+
+    // faq
+    document.querySelectorAll('.faq-question').forEach(question => {
+        question.addEventListener('click', () => {
+            const parent = question.parentElement;
+            // If this item is already active, just close it
+            if (parent.classList.contains('active')) {
+                parent.classList.remove('active');
+                question.querySelector('.toggle-icon').textContent = '+';
+                return;
+            }
+            // Close all items and change icons to +
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('active', 'first-item');
+                item.querySelector('.toggle-icon').textContent = '+';
+            });
+            // Open clicked item and change icon to -
+            parent.classList.add('active');
+            question.querySelector('.toggle-icon').textContent = '−';
+        });
+    });
+
+});
