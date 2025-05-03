@@ -198,10 +198,9 @@ document.addEventListener('DOMContentLoaded', function() {
         slidesPerView: 7,
         spaceBetween: 0,
         loop: true,
-        // centeredSlides: true,
-        autoplay: {
-          delay: 5000,
-        },
+        speed: 3000,
+        autoplay: {delay: 0},
+        freeMode: true,
     });
 
     // cases-slider
