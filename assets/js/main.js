@@ -215,11 +215,48 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     // cases-slider
-    const swiper3 = new Swiper('.cases-slider', {
-        slidesPerView: 2.9,
-        spaceBetween: 15,
-        loop: true
+    let swiper3 = null;
+    let init = false;
+    function swiperMode() {
+        let mobile = window.matchMedia('(min-width: 0px) and (max-width: 767px)');
+        let desktop = window.matchMedia('(min-width: 768px)');
+    
+        // For desktop - initialize swiper if not already initialized
+        if (desktop.matches) {
+            if (!init) {
+                init = true;
+                swiper3 = new Swiper('.cases-slider', {
+                    slidesPerView: 2,
+                    spaceBetween: 15,
+                    loop: true,
+                    breakpoints: {
+                        991: {
+                            slidesPerView: 2.9,
+                        },
+                    }
+                });
+            }
+        }
+        // For mobile - destroy swiper if it was initialized
+        else if (mobile.matches && init) {
+            if (swiper3 !== null && typeof swiper3.destroy === 'function') {
+                swiper3.destroy(true, true); // true, true means destroy both instance and DOM elements
+                swiper3 = null;
+            }
+            init = false;
+        }
+    }
+    
+    // Initialize on page load
+    window.addEventListener('load', swiperMode);
+    
+    // Update on window resize with debounce to improve performance
+    let resizeTimeout;
+    window.addEventListener('resize', function() {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(swiperMode, 250); // Wait 250ms after resize finishes
     });
+    // End cases-slider
 
     // faq
     document.querySelectorAll('.faq-question').forEach(question => {

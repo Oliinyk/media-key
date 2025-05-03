@@ -790,6 +790,9 @@ body {
     height: 1px;
     width: 100%;
 }
+.how-section .video {
+    height: 360px;
+} 
 .social-list {
     display: flex;
     align-items: center;
@@ -819,6 +822,7 @@ body {
 }
 .representatives-section .img-list {
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
 }
 .representatives-section .img-list + .img-list {
@@ -832,6 +836,7 @@ body {
     object-fit: contain;
     height: 52px;
     width: 170px;
+    max-width: 20%;
 }
 .cases-section {
     background-color: var(--light-gray);
@@ -1021,16 +1026,25 @@ body {
     font-family: var(--font-wix);
     color: var(--gray);
 }
-@media (max-width: 768px) {
+@media (max-width: 767px) {
     .team-section {
-        padding: 55px 0;
+        padding: 50px 0;
+    }
+    .team-section .title {
+        max-width: 200px;
+        margin: 0 0 50px;
     }
     .team-wrap {
         grid-template-columns: repeat(2, 1fr);
-        gap: 45px 20px;
+        gap: 35px 20px;
+        max-width: 320px;
     }
     .team-section .team-item {
         gap: 20px;
+    }
+    .team-section .team-item img {
+        height: 150px;
+        width: 150px;
     }
     .team-section .item-title {
         font-size: 16px;
@@ -1200,7 +1214,7 @@ body {
 .pricing-list li {
     list-style-type: disc;
 }
-@media (max-width: 992px) {
+@media (max-width: 991px) {
     .pricing-section {
         padding: 55px 0;
     }
@@ -1237,8 +1251,12 @@ body {
         padding-bottom: 20px;
         margin-bottom: 20px;
     }
+    .card-price-wrap {
+        max-width: 120px;
+    }
     .card-price-top {
         font-size: 16px;
+        clip-path: polygon(0% 0%, 100% 0, 100% 97%, 0% 79%);
     }
     .card-price-bottom .txt {
         font-size: 10px;
@@ -1273,7 +1291,10 @@ body {
     width: 100%;
     border: 1px solid var(--gray);
 }
-@media (max-width: 992px) {
+.more-about-section .video {
+    height: 360px;
+}
+@media (max-width: 991px) {
     .more-about-section {
         padding: 55px 0;
     }
@@ -1528,7 +1549,10 @@ a.f-email {
     .offer-section .title,
     .reviews-section .title,
     .why-section .title,
-    .how-section .title {
+    .how-section .title,
+    .cases-section .title,
+    .faq-section .title,
+    .team-section .title {
         font-size: 32px;
     }
     .how-section .col-head:nth-child(1) {
@@ -1536,6 +1560,10 @@ a.f-email {
     }
     .how-section .col-head:nth-child(2) {
         width: 60%;
+    }
+    .cases-section .slider-wrap {
+        margin-left: 15px;
+        margin-right: 15px;
     }
 }
 @media (max-width: 991px) {
@@ -1696,7 +1724,10 @@ a.f-email {
     .offer-section .title,
     .reviews-section .title,
     .why-section .title,
-    .how-section .title {
+    .how-section .title,
+    .cases-section .title,
+    .faq-section .title,
+    .team-section .title {
         font-size: 24px;
     }
     .offer-section .items {
@@ -1757,9 +1788,119 @@ a.f-email {
     .why-section .item {
         font-size: 16px;
     }
+    .how-section {
+        padding: 52px 0;
+    }
+    .how-section .row-head {
+        margin: 0 0 34px;
+    }
+    .how-section .video-wrap,
+    .how-section .text-wrap {
+        width: 100%;
+    }
+    .how-section .video-wrap {
+        padding: 0 0 25px;
+    }
+    .how-section .col-head {
+        flex-wrap: wrap;
+    }
+    .how-section .col-head + .col-head {
+        padding: 30px 0 0 0;
+    }
+    .how-section .col-head p {
+        max-width: 100%;
+        margin: 0 0 30px;
+    }
+    .how-section .text-wrap {
+        font-size: 14px;
+    }
+    .social-list {
+        margin: 30px 0 0;
+    }
+    .how-section .row-main::after {
+        display: none;
+    }
+    .representatives-section {
+        padding: 50px 0 47px;
+    }
+    .representatives-section .title {
+        margin: 0 0 65px;
+    }
+    .representatives-section .img-list {
+        justify-content: center;
+        gap: 25px 0; 
+    }
+    .representatives-section .img-list img {
+        max-width: 50%;
+    }
+    .representatives-section .img-list + .img-list {
+        display: none;
+    }
+    .cases-section {
+        padding: 52px 0 58px;
+    }
+    .cases-section .title {
+        margin: 0 0 50px;
+    }
+    .cases-slider .swiper-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 35px 0;
+        max-width: 430px;
+        margin: 0 auto;
+    }
+    .cases-section .swiper-slide {
+        opacity: 1;
+    }
+    .goal-section .items-row {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        margin: 0 0 24px;
+    }
+    .goal-section {
+        padding: 88px 0 50px;
+    }
+    .goal-section .title {
+        margin: 0 0 40px;
+    }
+    .goal-section .title span {
+        display: block;
+    }
+    .goal-section .subtitle {
+        font-size: 16px;
+    }
+    .goal-section ul {
+        margin: 35px 0 0;
+    }
+    .goal-section li {
+        font-size: 16px;
+    }
+    .faq-section {
+        padding: 53px 0 35px;
+    }
+    .faq-section .title {
+        margin: 0 0 10px;
+    }
+    .faq-item {
+        padding: 28px 0;
+    }
+    .faq-question h3 {
+        font-size: 16px;
+    }
+    .faq-answer .text-holder {
+        font-size: 14px;
+        margin: 37px 0 0;
+    }
 }
 @media (max-width: 475px) {
-    .for-whom-video {
+    .for-whom-video,
+    .how-section .video,
+    .more-about-section .video {
         height: 180px;
+    }
+    .representatives-section .img-list {
+        justify-content: flex-start;
+    }
+    .representatives-section .img-list img {
+        width: 50%;
     }
 }
