@@ -195,12 +195,23 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // why-slider
     const swiper2 = new Swiper('.why-slider', {
-        slidesPerView: 7,
+        slidesPerView: 2,
         spaceBetween: 0,
         loop: true,
         speed: 3000,
         autoplay: {delay: 0},
         freeMode: true,
+        breakpoints: {
+            640: {
+                slidesPerView: 3,
+            },    
+            768: {
+                slidesPerView: 4,
+            },
+            1199: {
+                slidesPerView: 6,
+            },
+        }
     });
 
     // cases-slider

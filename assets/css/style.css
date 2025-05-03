@@ -22,6 +22,9 @@ a {
 .text-medium {
     font-weight: 500;
 }
+.text-light {
+    font-weight: 300;
+}
 .text-large {
     font-size: 64px;
 }
@@ -433,6 +436,9 @@ body {
 .for-whom-section .video-wrap {
     margin: 0 auto;
 }
+.for-whom-video {
+    height: 621px;
+}
 .for-whom-section .col-title-wrap {
     padding: 80px 0 0;
 }
@@ -670,6 +676,9 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.review-video {
+    height: 564px;
 }
 .reviews-slider .swiper-slide-prev .slide-placeholder {
     margin-left: 46px;
@@ -1455,6 +1464,9 @@ a.f-email {
     }
 }
 @media (max-width: 1199px) {
+    .text-large {
+        font-size: 48px;
+    }
     .mobile-button {
         display: block;
         z-index: 999;
@@ -1512,8 +1524,24 @@ a.f-email {
     .limitation-text {
         font-size: 18px;
     }
+    .cta-text,
+    .offer-section .title,
+    .reviews-section .title,
+    .why-section .title,
+    .how-section .title {
+        font-size: 32px;
+    }
+    .how-section .col-head:nth-child(1) {
+        width: 40%;
+    }
+    .how-section .col-head:nth-child(2) {
+        width: 60%;
+    }
 }
 @media (max-width: 991px) {
+    .text-large {
+        font-size: 42px;
+    }
     .hero-wrap .title,
     .hero-box .date-text {
         font-size: 42px;
@@ -1521,8 +1549,58 @@ a.f-email {
     .hero-box {
         padding: 35px 42px 35px;
     }
+    .for-whom-section .items-row {
+        gap: 0 50px;
+    }
+    .for-whom-section .row-title {
+        font-size: 20px;
+    }
+    .about-wrap p {
+        font-size: 28px;
+    }
+    .form-wrap .text-col,
+    .form-wrap .form-col {
+        width: 100%;
+    }
+    .form-wrap .form-col {
+        padding: 37px 0 0 0;
+    }
+    .offer-section .items {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 25px 40px;
+    }
+    .reviews-section {
+        background-image: linear-gradient(to bottom, var(--dark) 33%, var(--dark-gray2) 33%);
+        padding: 70px 0 40px;
+    }
+    .reviews-section .text-col,
+    .reviews-section .slide-col {
+        width: 100%;
+    }
+    .reviews-section .text-col {
+        margin: 0 0 97px;
+    }
+    .reviews-section .text-holder {
+        max-width: 100%;
+    }
+    .reviews-section .slide-col {
+        justify-content: center;
+    }
+    .why-section .items {
+        gap: 0 50px;
+    }
+    .why-section .item {
+        font-size: 20px;
+    }
+    .how-section .col-head:nth-child(1),
+    .how-section .col-head:nth-child(2) {
+        width: 100%;
+    }
 }
 @media (max-width: 767px) {
+    .text-large {
+        font-size: 36px;
+    }
     .hero {
         padding: 180px 0 0;
         margin-bottom: -225px;
@@ -1530,6 +1608,10 @@ a.f-email {
     .hero-wrap .l-col,
     .hero-wrap .r-col {
         width: 100%;
+    }
+    .hero-wrap .l-col {
+        max-width: 432px;
+        margin: 0 auto;
     }
     .hero-wrap .r-col {
         justify-content: center;
@@ -1556,6 +1638,128 @@ a.f-email {
         margin: 0 0 25px;
     }
     .for-whom-section {
-        padding: 310px 0 100px;
+        padding: 317px 0 42px;
+    }
+    .for-whom-section .title {
+        font-size: 16px;
+        margin: 0 auto 93px;
+    }
+    .for-whom-video {
+        height: 380px;
+    }
+    .for-whom-section .col-title-wrap {
+        padding: 47px 0 0;
+    }
+    .for-whom-section .items-row {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+    .for-whom-section .col-text {
+        margin: 0 0 42px;
+    }
+    .for-whom-section .row-title {
+        font-size: 24px;
+    }
+    .for-whom-section .col-text > p {
+        min-height: 100%;
+    }
+    .action-section {
+        min-height: 68vh;
+    }
+    .action-section .items-row {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+    .action-section .title {
+        margin: 0 0 40px;
+    }
+    .action-section p {
+        font-size: 16px;
+    }
+    .about-wrap {
+        min-height: 68vh;
+    }
+    .about-wrap p {
+        font-size: 20px;
+    }
+    .form-wrap {
+        padding: 44px 0 97px;
+    }
+    .form-wrap .text-col p + p {
+        margin: 34px 0 0;
+    }
+    .form-wrap .form {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+    .offer-section {
+        padding: 52px 0 72px;
+    }
+    .cta-text,
+    .offer-section .title,
+    .reviews-section .title,
+    .why-section .title,
+    .how-section .title {
+        font-size: 24px;
+    }
+    .offer-section .items {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        gap: 25px 0;
+    }
+    .reviews-section {
+        padding: 52px 0 25px;
+    }
+    .reviews-section .title {
+        margin: 0 0 30px;
+    }
+    .reviews-section .title::after {
+        margin: 29px 0 0;
+    }
+    .reviews-section .text-col p {
+        font-size: 16px;
+    }
+    .reviews-slider {
+        height: 492px;
+        max-width: 423px;
+        padding: 0 0 52px;
+    }
+    .review-video {
+        height: 438px;
+    }
+    .reviews-slider .swiper-slide-active .slide-content {
+        min-width: 250px;
+    }
+    .reviews-slider .swiper-pagination-bullet {
+        width: 10px;
+        height: 10px;
+    }
+    .swiper-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet {
+        margin: 0 6px;
+    }
+    .reviews-slider .swiper-slide-prev .slide-placeholder {
+        margin-left: 33px;
+        height: 385px;
+    }
+    .reviews-slider .swiper-slide-next .slide-placeholder {
+        margin-right: 33px;
+        height: 385px;
+    }
+    .why-section {
+        padding: 50px 0 68px;
+    }
+    .why-section .title {
+        margin: 0 0 52px;
+    }
+    .why-section .slider-wrap {
+        margin: 0 0 53px;
+    }
+    .why-section .items {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        gap: 40px 0;
+    }
+    .why-section .item {
+        font-size: 16px;
+    }
+}
+@media (max-width: 475px) {
+    .for-whom-video {
+        height: 180px;
     }
 }
