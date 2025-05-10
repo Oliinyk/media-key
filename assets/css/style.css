@@ -351,7 +351,7 @@ body {
 .hero {
     background-image: url('../img/hero-bg.gif');
     background-size: cover;
-    background-position: 50%;
+    background-position: 50% 0;
     padding: 215px 0 87px;
 }
 .hero-wrap {
