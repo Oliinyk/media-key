@@ -825,11 +825,9 @@ body {
     flex-wrap: wrap;
     justify-content: space-between;
 }
-.representatives-section .img-list + .img-list {
+.representatives-section .img-divider {
     margin: 52px 0 0;
-}
-.representatives-section .img-list-light {
-    opacity: .5;
+    width: 100%;
 }
 .representatives-section .img-list img {
     filter: grayscale(100%);
@@ -850,6 +848,48 @@ body {
 .cases-section .slider-wrap {
     margin-left: calc((100vw - 1100px) / 2);
     overflow: hidden;
+}
+.cases-section .thumbnail-wrapper {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+}
+.cases-section .thumbnail-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.cases-section .play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(255, 255, 255, 0.75);
+    border: none;
+    border-radius: 50%;
+    width: 80px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.3s;
+    z-index: 10;
+}
+.cases-section .play-button:hover {
+    background: rgba(255, 255, 255, 0.9);
+}
+.cases-section .play-icon {
+    width: 0;
+    height: 0;
+    border-top: 20px solid transparent;
+    border-bottom: 20px solid transparent;
+    border-left: 30px solid var(--dark);
+    margin-left: 10px;
+}
+.thumbnail-wrapper.playing {
+    z-index: 5;
 }
 .cases-section .text-holder {
     margin: 35px 0 0;
@@ -1017,6 +1057,12 @@ body {
     object-fit: cover;
     height: 208px;
     width: 208px;
+}
+.team-section .top-position img {
+    object-position: top;
+}
+.team-section .right-position img {
+    object-position: right;
 }
 .team-section .item-title {
     color: var(--light-gray);
@@ -1359,7 +1405,7 @@ body {
 .f-phone {
     display: flex;
     flex-direction: column;
-    font-size: 64px;
+    font-size: 36px;
     font-weight: 700;
     line-height: 1.15;
     margin-bottom: 40px;
@@ -1833,11 +1879,11 @@ a.f-email {
         justify-content: center;
         gap: 25px 0; 
     }
+    .representatives-section .img-divider {
+        display: none;
+    }
     .representatives-section .img-list img {
         max-width: 50%;
-    }
-    .representatives-section .img-list + .img-list {
-        display: none;
     }
     .cases-section {
         padding: 52px 0 58px;

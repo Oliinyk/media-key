@@ -256,6 +256,55 @@ document.addEventListener('DOMContentLoaded', function() {
         clearTimeout(resizeTimeout);
         resizeTimeout = setTimeout(swiperMode, 250); // Wait 250ms after resize finishes
     });
+
+
+    // play for cases-slider 
+    let currentActiveWrapper = null;
+
+    function createThumbnailContent(wrapper) {
+        const originalImage = wrapper.getAttribute('data-original-image');
+        return `
+            <img src="${originalImage}" alt="Thumbnail">
+            <button class="play-button">
+                <div class="play-icon"></div>
+            </button>
+        `;
+    }
+
+    function setupVideoWrapper(wrapper) {
+        const playButton = wrapper.querySelector('.play-button');
+        const img = wrapper.querySelector('img');
+        const videoId = wrapper.getAttribute('data-video-id');
+
+        playButton.addEventListener('click', () => {
+            if (wrapper.classList.contains('playing')) return;
+
+            if (currentActiveWrapper && currentActiveWrapper !== wrapper) {
+                currentActiveWrapper.innerHTML = createThumbnailContent(currentActiveWrapper);
+                currentActiveWrapper.classList.remove('playing');
+
+                setupVideoWrapper(currentActiveWrapper);
+            }
+
+            wrapper.setAttribute('data-original-image', img.src);
+
+            const iframe = document.createElement('iframe');
+            iframe.width = '100%';
+            iframe.height = '100%';
+            iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+            iframe.title = 'YouTube video player';
+            iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+            iframe.allowFullscreen = true;
+
+            wrapper.innerHTML = '';
+            wrapper.appendChild(iframe);
+            
+            wrapper.classList.add('playing');
+            currentActiveWrapper = wrapper;
+        });
+    }
+
+    document.querySelectorAll('.thumbnail-wrapper').forEach(setupVideoWrapper);
     // End cases-slider
 
     // faq
