@@ -794,6 +794,7 @@ body {
 }
 .how-section .video {
     height: 360px;
+    width: 100%;
 } 
 .social-list {
     display: flex;
@@ -1339,11 +1340,12 @@ body {
     margin: 0;
 }
 .more-about-section .video-wrap {
-    width: 100%;
     border: 1px solid var(--gray);
+    width: 100%;
 }
 .more-about-section .video {
     height: 360px;
+    width: 100%;
 }
 @media (max-width: 991px) {
     .more-about-section {
