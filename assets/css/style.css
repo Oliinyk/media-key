@@ -472,6 +472,7 @@ body {
 }
 .action-section {
     background-image: url('../img/action-bg.gif');
+    background-position: 50% 0;
     background-size: cover;
     padding: 50px 0;
     color: var(--white);
@@ -918,6 +919,7 @@ body {
 }
 .goal-section {
     background-image: url('../img/goal-bg.gif');
+    background-position: 50% 0;
     background-size: cover;
     color: var(--white);
     padding: 255px 0 73px;
