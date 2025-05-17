@@ -712,7 +712,7 @@
                             <p class="pricing-cta-text">
                                 Перейдіть на новий рівень управління бізнесом, проектом та життям.
                             </p>
-                            <a href="#" class="btn">PLAY THE GAME</a>
+                            <a href="#form-anchor" class="btn">PLAY THE GAME</a>
                         </div>
                     </div>
                     <div class="pricing-cards">
@@ -914,12 +914,13 @@
                     }
                     
                     // Перевірка телефону - український формат (приклад: +380501234567)
-                    const phoneRegex = /^\+?3?8?(0\d{9})$/;
+                    // const phoneRegex = /^\+?3?8?(0\d{9})$/;
+                    const phoneRegex = /^\s*\d*[\.\,]?\d*\s*$/;
                     if (!phoneInput.value.trim()) {
                         showError(phoneInput, 'Будь ласка, введіть ваш номер телефону');
                         isValid = false;
                     } else if (!phoneRegex.test(phoneInput.value.trim())) {
-                        showError(phoneInput, 'Введіть правильний формат телефону (наприклад, +380501234567)');
+                        showError(phoneInput, 'Введіть правильний формат телефону');
                         isValid = false;
                     }
                     
