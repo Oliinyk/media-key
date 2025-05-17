@@ -210,6 +210,18 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    document.querySelectorAll('.cases-slider .swiper-slide').forEach(slide => {
+        const playButton = slide.querySelector('.play-button');
+        const slideButton = slide.querySelector('.btn-slide');
+
+        if (playButton && slideButton) {
+            slideButton.addEventListener('click', (e) => {
+                e.preventDefault();
+                playButton.click();
+            });
+        }
+    });
+
     document.querySelectorAll('.thumbnail-wrapper').forEach(setupVideoWrapper);
     // End cases-slider
 

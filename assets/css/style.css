@@ -88,6 +88,7 @@ a {
     background-color: transparent;
     border: 1px solid var(--dark-gray);
     color: var(--dark-gray);
+    cursor: pointer;
     padding: 12px 32px;
     border-radius: 30px;
     text-transform: uppercase;
