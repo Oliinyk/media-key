@@ -165,64 +165,97 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
     // play for cases-slider 
-    let currentActiveWrapper = null;
+    // let currentActiveWrapper = null;
 
-    function createThumbnailContent(wrapper) {
-        const originalImage = wrapper.getAttribute('data-original-image');
-        return `
-            <img src="${originalImage}" alt="Thumbnail">
-            <button class="play-button">
-                <div class="play-icon"></div>
-            </button>
-        `;
-    }
+    // function createThumbnailContent(wrapper) {
+    //     const originalImage = wrapper.getAttribute('data-original-image');
+    //     return `
+    //         <img src="${originalImage}" alt="Thumbnail">
+    //         <button class="play-button">
+    //             <div class="play-icon"></div>
+    //         </button>
+    //     `;
+    // }
 
-    function setupVideoWrapper(wrapper) {
-        const playButton = wrapper.querySelector('.play-button');
-        const img = wrapper.querySelector('img');
-        const videoId = wrapper.getAttribute('data-video-id');
+    // function setupVideoWrapper(wrapper) {
+    //     const playButton = wrapper.querySelector('.play-button');
+    //     const img = wrapper.querySelector('img');
+    //     const videoId = wrapper.getAttribute('data-video-id');
 
-        playButton.addEventListener('click', () => {
-            if (wrapper.classList.contains('playing')) return;
+    //     playButton.addEventListener('click', () => {
+    //         if (wrapper.classList.contains('playing')) return;
 
-            if (currentActiveWrapper && currentActiveWrapper !== wrapper) {
-                currentActiveWrapper.innerHTML = createThumbnailContent(currentActiveWrapper);
-                currentActiveWrapper.classList.remove('playing');
+    //         if (currentActiveWrapper && currentActiveWrapper !== wrapper) {
+    //             currentActiveWrapper.innerHTML = createThumbnailContent(currentActiveWrapper);
+    //             currentActiveWrapper.classList.remove('playing');
 
-                setupVideoWrapper(currentActiveWrapper);
-            }
+    //             setupVideoWrapper(currentActiveWrapper);
+    //         }
 
-            wrapper.setAttribute('data-original-image', img.src);
+    //         wrapper.setAttribute('data-original-image', img.src);
 
-            const iframe = document.createElement('iframe');
-            iframe.width = '100%';
-            iframe.height = '100%';
-            iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
-            iframe.title = 'YouTube video player';
-            iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
-            iframe.allowFullscreen = true;
+    //         const iframe = document.createElement('iframe');
+    //         iframe.width = '100%';
+    //         iframe.height = '100%';
+    //         iframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+    //         iframe.title = 'YouTube video player';
+    //         iframe.allow = 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture';
+    //         iframe.allowFullscreen = true;
 
-            wrapper.innerHTML = '';
-            wrapper.appendChild(iframe);
+    //         wrapper.innerHTML = '';
+    //         wrapper.appendChild(iframe);
             
-            wrapper.classList.add('playing');
-            currentActiveWrapper = wrapper;
-        });
-    }
+    //         wrapper.classList.add('playing');
+    //         currentActiveWrapper = wrapper;
+    //     });
+    // }
 
-    document.querySelectorAll('.cases-slider .swiper-slide').forEach(slide => {
-        const playButton = slide.querySelector('.play-button');
-        const slideButton = slide.querySelector('.btn-slide');
+    // document.querySelectorAll('.cases-slider .swiper-slide').forEach(slide => {
+    //     const playButton = slide.querySelector('.play-button');
+    //     const slideButton = slide.querySelector('.btn-slide');
 
-        if (playButton && slideButton) {
-            slideButton.addEventListener('click', (e) => {
-                e.preventDefault();
-                playButton.click();
-            });
+    //     if (playButton && slideButton) {
+    //         slideButton.addEventListener('click', (e) => {
+    //             e.preventDefault();
+    //             playButton.click();
+    //         });
+    //     }
+    // });
+
+    // document.querySelectorAll('.thumbnail-wrapper').forEach(setupVideoWrapper);
+
+
+
+
+    const watchButtons = document.querySelectorAll('.btn-slide');
+    const videos = document.querySelectorAll('.thumbnail-wrapper iframe');
+    videos.forEach(video => {
+        let src = video.getAttribute('src');
+        video.setAttribute('data-src', src);
+        src = src.replace('autoplay=1', '');
+        if (src.includes('?')) {
+            src = src + '&mute=1&enablejsapi=1';
+        } else {
+            src = src + '?mute=1&enablejsapi=1';
         }
+        video.setAttribute('src', src);
     });
 
-    document.querySelectorAll('.thumbnail-wrapper').forEach(setupVideoWrapper);
+    watchButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const slide = this.closest('.swiper-slide');
+            const iframe = slide.querySelector('iframe');
+            if (iframe) {
+                let src = iframe.getAttribute('data-src');
+                if (src.includes('?')) {
+                    src = src + '&autoplay=1';
+                } else {
+                    src = src + '?autoplay=1';
+                }
+                iframe.setAttribute('src', src);
+            }
+        });
+    });
     // End cases-slider
 
     // faq
